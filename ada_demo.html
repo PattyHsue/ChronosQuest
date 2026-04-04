@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Logic: A* Pathfinding | UTT-v2.0 Ada(AAL)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=JetBrains+Mono:wght@300;500&display=swap');
+
+        :root {
+            --primary: #00ff9d;
+            --secondary: #0077ff;
+            --accent: #ff00ff;
+            --bg: #030a10;
+            --cell-bg: #0a192f;
+            --glass: rgba(10, 25, 47, 0.8);
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            display: flex;
+            height: 100vh;
+        }
+
+        #ui-panel {
+            width: 350px;
+            height: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+        }
+
+        .header { margin-bottom: 40px; }
+        .header h2 { font-size: 10px; color: var(--primary); letter-spacing: 4px; margin-bottom: 5px; }
+        .header h1 { font-size: 2rem; letter-spacing: -1px; font-weight: 300; }
+
+        .stat-group { margin-bottom: 30px; }
+        .stat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; }
+        .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: var(--primary); }
+
+        .desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 40px; }
+
+        .btn {
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .btn:hover { background: var(--primary); color: #000; }
+
+        #visualizer-container {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #0a1f38 0%, #030a10 100%);
+        }
+
+        canvas {
+            box-shadow: 0 0 100px rgba(0, 255, 157, 0.1);
+            border-radius: 4px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--glass);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .dot { width: 10px; height: 10px; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <div id="ui-panel">
+        <div class="header">
+            <h2>UTT-v2.0 ADALAB</h2>
+            <h1>NEURAL LOGIC</h1>
+        </div>
+
+        <div class="desc">
+            此展示由 <b>Ada (AAL)</b> 開發。實作高效能 A* (A-Star) 路徑搜尋演算法。觀察 AI 如何在複雜的網格中解構邏輯並尋找最佳路徑。
+        </div>
+
+        <div class="stat-group">
+            <p class="stat-label">ALGORITHM</p>
+            <p class="stat-value">A* (A-Star)</p>
+        </div>
+
+        <div class="stat-group">
+            <p class="stat-label">NODES VISITED</p>
+            <p id="nodes-visited" class="stat-value">0</p>
+        </div>
+
+        <div class="stat-group">
+            <p class="stat-label">PATH LENGTH</p>
+            <p id="path-length" class="stat-value">0</p>
+        </div>
+
+        <button class="btn" onclick="startSearch()">START LOGIC SCAN</button>
+        <button class="btn" style="border-color: var(--secondary); color: var(--secondary);" onclick="resetGrid()">RESET ENVIRONMENT</button>
+
+        <div style="flex-grow: 1;"></div>
+        <p style="font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 2px;">DESIGNED BY ADA (AAL) | EXPERT #11</p>
+    </div>
+
+    <div id="visualizer-container">
+        <canvas id="gridCanvas"></canvas>
+        <div class="legend">
+            <div class="legend-item"><div class="dot" style="background: var(--primary);"></div> Path</div>
+            <div class="legend-item"><div class="dot" style="background: var(--secondary);"></div> Visited</div>
+            <div class="legend-item"><div class="dot" style="background: #333;"></div> Wall</div>
+        </div>
+    </div>
+
+    <script src="ada_logic.js"></script>
+</body>
+</html>

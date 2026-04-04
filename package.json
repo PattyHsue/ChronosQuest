@@ -1,0 +1,25 @@
+{
+  "name": "chronos-quest",
+  "version": "1.0.0",
+  "description": "Adventure Brick Breaker - Chronos Quest",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.utt.chronosquest",
+    "productName": "Chronos Quest",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.png"
+    }
+  }
+}

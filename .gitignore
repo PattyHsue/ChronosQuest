@@ -1,0 +1,15 @@
+# UTT-v2.0 Web Deployment Ignore
+dist/
+build/
+*.exe
+__pycache__/
+*.pyc
+.py
+venv/
+.env
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.spec
+app.py
+README.md
