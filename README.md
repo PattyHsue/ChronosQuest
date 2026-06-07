@@ -1,6 +1,6 @@
 [2026-06-07T10:35:00+08:00]
 
-[![FinalTerm video](https://img.youtube.com/vi/7N0lMTfuQUeeDSxD/maxresdefault.jpg)]([https://youtu.be/dQw4w9WgXcQ](https://youtu.be/PllTDWeZD2c?si=7N0lMTfuQUeeDSx))
+[![Finalterm video](https://img.youtube.com/vi/lUOWmX9jRxAn6kgs/maxresdefault.jpg)](https://youtu.be/PllTDWeZD2c?si=lUOWmX9jRxAn6kgs)
 
 # ⏱️ Chronos Quest v2.0 - UTT Mobile 🚀
 
