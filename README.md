@@ -1,6 +1,5 @@
 [2026-06-07T10:35:00+08:00]
 
-### [![影片替代文字](你的YouTube影片網址)
 [![My video]](https://youtu.be/PllTDWeZD2c?si=7N0lMTfuQUeeDSxD))
 
 # ⏱️ Chronos Quest v2.0 - UTT Mobile 🚀
