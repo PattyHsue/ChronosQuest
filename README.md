@@ -6,7 +6,7 @@
 [![Electron](https://img.shields.io/badge/Electron-28.2.0-47848f.svg)](https://www.electronjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### 🎮 [👉 點擊這裡立即線上遊玩 (Play Now!) 👈](https://pattyhsue.github.io/ChronosQuest/Reconstruction_2026M4/) 🎮
+### 🎮 [👉 點擊這裡立即線上遊玩 (Play Now!) 👈](https://pattyhsue.github.io/ChronosQuest/CQ_4Season_2026M4/) 🎮
 
 歡迎來到 **Chronos Quest v2.0**！這是一個由 Universal Tutor Team (UTT-v2.0) 精心設計的「全能冒險打磚塊」遊戲 🎮。結合了流暢的 HTML5 Canvas 物理引擎、Web Audio API 過程化音樂，以及 Electron 跨平台封裝技術，為玩家帶來大師級的沉浸式體驗 ✨。
 
